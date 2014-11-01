@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>AngularJS-Translate Example</title>
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-translate/angular-translate.min.js"></script>
+	<script src="translate.js"></script>
+	<script src="app.js"></script>
+
+	<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<style>
+		.margin-box {
+			margin-top: 25px
+		}
+	</style>
+</head>
+<body ng-app="transTest">
+
+<div class="container">
+	<section ng-controller="LanguageSwitcherCtrl" class="btn-group margin-box">
+		<button ng-click="changeLanguage('en')" class="btn btn-success" autofocus="true">english</button>
+		<button ng-click="changeLanguage('pl')" class="btn btn-success">polish</button>
+		<button ng-click="changeLanguage('cs')" class="btn btn-success">čeština</button>
+	</section>
+
+	<section ng-controller="TestCtrl" class="well margin-box">
+		<h1>{{ title | translate }}</h1>
+
+		<h2>{{ "SUB_TITLE" | translate }}</h2>
+
+		<h3>{{ "SUB.SUB.TITLE" | translate }}</h3>
+
+		<p>{{ foo | translate }}</p>
+	</section>
+</div>
+</body>
+</html>
